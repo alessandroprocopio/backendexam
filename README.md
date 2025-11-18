@@ -1,9 +1,10 @@
-##EXAM API CLASS CONTROLLER
+## EXAM API CLASS CONTROLLER
 
-using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
+    
+    using Microsoft.AspNetCore.Mvc;
 
     public class User
     {
@@ -71,16 +72,16 @@ namespace WebApplication1.Controllers
 }
 
 
-Example of middleware into code
+Snippet of an example middleware into code
 
-app.Use(async (context, next) =>
-{
-    var token = context.Request.Headers["Authorization"];
-    if (string.IsNullOrEmpty(token) || token != "Bearer my-secret-token")
-    {
-        context.Response.StatusCode = 403;
-        await context.Response.WriteAsync("Accesso negato.");
-        return;
-    }
-    await next.Invoke();
-});
+# app.Use(async (context, next) =>
+# {
+#    var token = context.Request.Headers["Authorization"];
+#    if (string.IsNullOrEmpty(token) || token != "Bearer my-secret-token")
+#    {
+#        context.Response.StatusCode = 403;
+#        await context.Response.WriteAsync("Accesso negato.");
+#        return;
+#    }
+#    await next.Invoke();
+# });
